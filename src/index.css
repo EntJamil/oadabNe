@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root,
+[data-theme="sepia"] {
+  --bg-canvas: #FBF9F5;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #F4EFE6;
+  --bg-muted: #EFE9DC;
+  --border-subtle: #E5DEC9;
+  --border-strong: #D2C5A8;
+  --text-primary: #1C1917;
+  --text-secondary: #44403C;
+  --text-muted: #78716C;
+  --accent-primary: #8C6218;
+  --accent-hover: #704D10;
+  --accent-soft: #F6EFE0;
+  --accent-gold: #B38728;
+  --header-bg: #17130F;
+  --header-text: #F7F3EB;
+  --font-display: 'Amiri', Georgia, serif;
+  --font-reading: 'Amiri', Georgia, serif;
+  --font-ui: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+[data-theme="white"] {
+  --bg-canvas: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #F1F5F9;
+  --bg-muted: #E2E8F0;
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --accent-primary: #785212;
+  --accent-hover: #5E3F0C;
+  --accent-soft: #F8F4EC;
+  --accent-gold: #9A6F1A;
+  --header-bg: #0F172A;
+  --header-text: #F8FAFC;
+}
+
+[data-theme="andalusia"] {
+  --bg-canvas: #F4F6F2;
+  --bg-surface: #FAFCF9;
+  --bg-elevated: #E9EFE6;
+  --bg-muted: #DCE5D8;
+  --border-subtle: #D5E0D0;
+  --border-strong: #B8C9B0;
+  --text-primary: #162119;
+  --text-secondary: #2F4034;
+  --text-muted: #586B5D;
+  --accent-primary: #1F5135;
+  --accent-hover: #153B26;
+  --accent-soft: #E6F0EA;
+  --accent-gold: #8F6B24;
+  --header-bg: #132218;
+  --header-text: #F2F6F3;
+}
+
+[data-theme="night"] {
+  --bg-canvas: #0B0F17;
+  --bg-surface: #131926;
+  --bg-elevated: #1A2234;
+  --bg-muted: #232E45;
+  --border-subtle: #243048;
+  --border-strong: #344566;
+  --text-primary: #EAE4D7;
+  --text-secondary: #C4BCAE;
+  --text-muted: #8E99AD;
+  --accent-primary: #D4AF37;
+  --accent-hover: #E5C349;
+  --accent-soft: #1E2638;
+  --accent-gold: #D4AF37;
+  --header-bg: #070A10;
+  --header-text: #EAE4D7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  font-family: var(--font-ui);
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-reading {
+  font-family: var(--font-reading);
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+.font-mono-nums {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom classical literary formatting inside Reader */
+.reader-prose p {
+  margin-bottom: 1.45em;
+  text-align: justify;
+  line-height: inherit;
+}
+
+.reader-prose h2,
+.reader-prose h3,
+.reader-prose h4 {
+  font-family: var(--font-display);
+  color: var(--accent-primary);
+  margin-top: 1.8em;
+  margin-bottom: 0.75em;
+  font-weight: 700;
+}
+
+.reader-prose blockquote,
+.reader-prose .verse-block {
+  margin: 1.75em auto;
+  padding: 1.25em 1.75em;
+  background-color: var(--bg-elevated);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.06em;
+}
+
+.reader-prose mark {
+  background-color: rgba(212, 175, 55, 0.35);
+  color: inherit;
+  padding: 0 3px;
+  border-radius: 3px;
+}
